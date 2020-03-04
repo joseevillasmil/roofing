@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return 'Texas Gold 2020';
+});
+Route::options('oauth/token', function(){
+    return response()->json([]);
 });
