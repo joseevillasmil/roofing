@@ -40,8 +40,8 @@ class Sales extends Migration
             $table->string('claim_number')->nullable();
             $table->string('adjuster')->nullable();
             $table->text('aditional')->nullable();
-            $table->json('images')->nullable();
-            $table->json('coords')->nullable();
+            $table->longText('images')->nullable();
+            $table->longText('coords')->nullable();
             $table->string('status')->default('waiting');
             $table->string('agreement');
             $table->timestamps();
