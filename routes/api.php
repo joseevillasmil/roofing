@@ -19,4 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request){
 Route::group(['middleware' => ['auth:api']], function(){
     Route::resource('sales', 'SalesController');
 });
+Route::options('sales', function(){
+    return response()->json([]);
+});
+Route::options('sales/{any?}', function(){
+    return response()->json([]);
+});
 
