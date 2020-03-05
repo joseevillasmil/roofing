@@ -1,7 +1,7 @@
 <table>
     <tr>
         <td>
-            <img src="{{public_path('img/logo.png')}}" width="35" >
+            <img src="{{public_path('img/logo.png')}}" width="130" >
         </td>
         <td>
             <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXAS GOLD ROOFING &amp; MORE</strong></p>
@@ -54,6 +54,6 @@
 <p>&nbsp;</p>
 <p>I/We agree  <br>
     @if($request->sign)
-        <img src="{{public_path('img/' . $request->sign)}}">
+        <img src="{{public_path('img/' . $request->sign)}}" width="120">
     @endif
 </p>
