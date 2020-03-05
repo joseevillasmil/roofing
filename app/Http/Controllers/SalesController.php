@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Mail;
 class SalesController extends Controller
 {
     function index(Request $request){
-        $sales = Sale::whereIn('status', config('status')[Auth::user()->profile])->orderBy('updated_at', 'asc');
-        $sales->get();
+        $sales = Sale::whereIn('status', config('status')[Auth::user()->profile])
+                    ->orderBy('updated_at', 'asc')
+                    ->get();
         return response()->json($sales);
     }
     function store(Request $request){
