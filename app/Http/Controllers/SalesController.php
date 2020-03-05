@@ -14,11 +14,7 @@ class SalesController extends Controller
 {
     function index(Request $request){
         $sales = Sale::whereIn('status', config('status')[Auth::user()->profile])->orderBy('updated_at', 'asc');
-        if(!empty($request->all())) {
-            foreach($request->all() as $column => $value) {
-                $sales->where($column, $value);
-            }
-        }
+        $sales->get();
         return response()->json($sales);
     }
     function store(Request $request){
