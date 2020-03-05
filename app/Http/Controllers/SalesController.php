@@ -61,7 +61,7 @@ class SalesController extends Controller
         return response()->json($sale);
     }
     function show($id){
-        $sale = Sale::find($id);
+        $sale = Sale::whereId($id)->with(['user'])->first();
         return response()->json($sale);
     }
     function destroy($id){
