@@ -33,9 +33,9 @@ class SalesController extends Controller
             file_put_contents(public_path('img/' . $sign), base64_decode($request->sign));
             $request->sign = $sign;
         }
+        $request->birthday = $sale->birthday ? $sale->birthday->format('m/d/Y') : '';
         $agreement = view('pdf.agreement')->with(['request' => $request])->render();
         PDF::loadHTML($agreement)->save(storage_path('app/agreements/' . $sale->agreement));
-
         Mail::to(env('MAIL_TO'))->send(new NewSale($sale));
         Mail::to($sale->email)->send(new Agreement(storage_path('app/agreements/' . $sale->agreement)));
         return response()->json($sale);

@@ -1,7 +1,7 @@
 <table>
     <tr>
         <td>
-            <img src="{{public_path('img/logo.png')}}" >
+            <img src="{{public_path('img/logo.png')}}" width="35" >
         </td>
         <td>
             <p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TEXAS GOLD ROOFING &amp; MORE</strong></p>
@@ -30,7 +30,7 @@
 <p><strong>&nbsp;</strong></p>
 <p><strong>If owner cancels the agreement the owner agrees to pay twenty five percent (25%) of the total amount authorized by owner's insurance company, for the administrative and technical expenses incurred. _____</strong></p>
 <p>&nbsp;</p>
-<p><strong>Name:</strong> {{$request->name}} &nbsp;<strong>DOB:_____/_____/_____&nbsp;&nbsp;&nbsp; 4SS:</strong> {{$request->ss}}</p>
+<p><strong>Name:</strong> {{$request->name}} &nbsp;<strong>DOB:{{$request->birthday}}&nbsp;&nbsp;&nbsp; 4SS:</strong> {{$request->ss}}</p>
 <p><strong>Address: </strong> {{$request->address}} <strong>City {{$request->city}} Zip</strong>: {{$request->zip}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Home Phone:</strong> {{$request->telephone}} <strong>Cell Phone: &nbsp;</strong>{{$request->cellphone}} <strong>Email: </strong>{{$request->email}}&nbsp;</p>
 <p><strong>Insurance Company/Agent: </strong>{{$request->agent}} <strong>Policy Number: </strong>{{$request->policy_number}}</p>
 <p><strong>Rep Phone: &nbsp;</strong>____________________________ <strong>Rep. Signature: &nbsp;</strong>____________________________<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>
