@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SalesController;
 use Illuminate\Http\Request;
 
 /*
@@ -19,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request){
 Route::group(['middleware' => ['auth:api']], function(){
     Route::resource('sales', 'SalesController');
 });
+Route::get('agreement/{id}', 'SalesController@downloadAgreement');
 Route::options('sales', function(){
     return response()->json([]);
 });

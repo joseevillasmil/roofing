@@ -30,12 +30,28 @@ class SalesController extends Controller
             file_put_contents(public_path('img/' . $sign), base64_decode($request->sign));
             $request->sign = $sign;
         }
+        if($request->photos) {
+            $photos = [];
+            foreach($request->photos as $photo) {
+                $filename = uniqid() . 'jpg';
+                file_put_contents(public_path('img/' . $filename), base64_decode($photo));
+                array_push($photos, $filename);
+            }
+            $sale->images = $photos;
+            $sale->save;
+        }
+
         $request->birthday = $sale->birthday ? $sale->birthday->format('m/d/Y') : '';
         $agreement = view('pdf.agreement')->with(['request' => $request])->render();
         PDF::loadHTML($agreement)->save(storage_path('app/agreements/' . $sale->agreement));
         Mail::to(env('MAIL_TO'))->send(new NewSale($sale));
         Mail::to($sale->email)->send(new Agreement(storage_path('app/agreements/' . $sale->agreement)));
         return response()->json($sale);
+    }
+    function downloadAgreement($id) {
+        $sale = Sale::find($id);
+        $path = storage_path('app/agreements/' . $sale->agreement);
+        return response()->download($path);
     }
     function update(Request $request, $id){
         $sale = Sale::find($id);
