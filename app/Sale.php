@@ -13,4 +13,8 @@ class Sale extends Model
                             'previous_claim_date', 'claim_number', 'adjuster', 'aditional', 'status'];
     protected $dates = ['created_at', 'updated_at', 'birthday', 'loss_date'];
     protected $casts = ['images' => 'array', 'coords' => 'array'];
+
+    function user() {
+        return $this->belongsTo('App\User', 'user_id');
+    }
 }
