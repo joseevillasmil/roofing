@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 class SalesController extends Controller
 {
     function index(Request $request){
-        $sales = Sale::orderBy('updated_at', 'desc');
+        $sales = Sale::whereIn('status', config('status')[Auth::user()->profile])->orderBy('updated_at', 'asc');
         if(!empty($request->all())) {
             foreach($request->all() as $column => $value) {
                 $sales->where($column, $value);
