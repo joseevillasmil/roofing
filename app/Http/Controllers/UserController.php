@@ -15,6 +15,7 @@ class UserController extends Controller
     function store(Request $request) {
         $user = new User();
         $user->fill($request->all());
+        $user->username = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
         return response()->json($user);
@@ -22,8 +23,11 @@ class UserController extends Controller
 
     function update(Request $request, $id){
         $user = User::find($id);
+        $user->username = $request->email;
         $user->fill($request->all());
-        $user->password = bcrypt($request->password);
+        if($request->password) {
+            $user->password = bcrypt($request->password);
+        }
         $user->save();
         return response()->json($user);
     }
