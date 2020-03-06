@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request){
 });
 Route::group(['middleware' => ['auth:api']], function(){
     Route::resource('sales', 'SalesController');
+    Route::resource('users', 'UserController');
 });
 Route::get('agreement/{id}', 'SalesController@downloadAgreement');
 Route::options('sales', function(){
