@@ -27,9 +27,17 @@
 <p><strong>Texas law requires a person insured under a property insurance policy to pay any deductible applicable to a claim made under the policy. It is a violation of this Texas law for a person or business paid wholly or partly from proceeds of a property insurance claim to knowingly allow the insured person to fail to pay. Or assist the insured person&rsquo;s failure to pay, the applicable insurance deductible. </strong></p>
 <p><strong></strong></p>
 <p><strong>I understand that by initialing and signing this agreement I am bound by the terms of this contract and testify that I am the owner, or acting on behalf of the owner, spouse or landlord. ________</strong></p>
-<p><strong></strong></p>
+<p>
+    @if($request->sign2)
+        <img src="{{public_path('img/' . $request->sign2)}}" width="100">
+    @endif
+</p>
 <p><strong>If owner cancels the agreement the owner agrees to pay twenty five percent (25%) of the total amount authorized by owner's insurance company, for the administrative and technical expenses incurred. _____</strong></p>
-<p></p>
+<p>
+    @if($request->sign3)
+        <img src="{{public_path('img/' . $request->sign3)}}" width="100">
+    @endif
+</p>
 <p><strong>Name:</strong> {{$request->name}} <strong>DOB:{{$request->birthday}} 4SS:</strong> {{$request->ss}}</p>
 <p><strong>Address: </strong> {{$request->address}} <strong>City {{$request->city}} Zip : {{$request->zip}} <strong>Home Phone:</strong> {{$request->telephone}} <strong>Cell Phone: </strong>{{$request->cellphone}} <strong>Email: </strong>{{$request->email}}</p>
 <p><strong>Insurance Company/Agent: </strong>{{$request->agent}} <strong>Policy Number: </strong>{{$request->policy_number}}</p>

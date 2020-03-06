@@ -31,6 +31,16 @@ class SalesController extends Controller
             file_put_contents(public_path('img/' . $sign), base64_decode($request->sign));
             $request->sign = $sign;
         }
+        if($request->sign2) {
+            $sign2 = uniqid() . '.jpg';
+            file_put_contents(public_path('img/' . $sign2), base64_decode($request->sign2));
+            $request->sign2 = $sign2;
+        }
+        if($request->sign3) {
+            $sign3 = uniqid() . '.jpg';
+            file_put_contents(public_path('img/' . $sign3), base64_decode($request->sign3));
+            $request->sign3 = $sign3;
+        }
         if($request->photos) {
             $photos = [];
             foreach($request->photos as $photo) {
