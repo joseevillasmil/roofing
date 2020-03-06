@@ -27,19 +27,19 @@ class SalesController extends Controller
         $sale->save();
 
         if($request->sign) {
-            $sign = uniqid() . 'jpg';
+            $sign = uniqid() . '.jpg';
             file_put_contents(public_path('img/' . $sign), base64_decode($request->sign));
             $request->sign = $sign;
         }
         if($request->photos) {
             $photos = [];
             foreach($request->photos as $photo) {
-                $filename = uniqid() . 'jpg';
+                $filename = uniqid() . '.jpg';
                 file_put_contents(public_path('img/' . $filename), base64_decode($photo));
                 array_push($photos, $filename);
             }
             $sale->images = $photos;
-            $sale->save;
+            $sale->save();
         }
 
         $request->birthday = $sale->birthday ? $sale->birthday->format('m/d/Y') : '';
